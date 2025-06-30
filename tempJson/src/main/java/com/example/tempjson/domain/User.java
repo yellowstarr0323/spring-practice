@@ -15,6 +15,7 @@ import java.util.List;
 @Entity
 @Table(name = "user")
 @NoArgsConstructor
+@AllArgsConstructor
 public class User {
 
   @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE, orphanRemoval = true)
