@@ -1,9 +1,6 @@
-package com.example.practicespringsecurity.domain.user.domain;
+package com.example.practicespringsecurity.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,11 +21,16 @@ public class User {
 
   private String accountId;
 
-  private Role role;//아니 시발 개능딸 짓함
+  private int age;
+
+
+  @Enumerated(EnumType.STRING)
+  private Role role;
 
   @Builder
-  public User(Long id,String accountId,String username, String password, Role role) {
+  public User(Long id,String accountId,String username, String password, Role role, int age) {
     this.id=id;
+    this.age=age;
     this.accountId = accountId;
     this.username = username;
     this.password = password;

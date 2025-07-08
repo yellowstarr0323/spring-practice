@@ -1,7 +1,6 @@
-package com.example.practicespringsecurity.domain.user.domain.repository;
+package com.example.practicespringsecurity.repository;
 
-import com.example.practicespringsecurity.domain.user.controller.dto.UserDto;
-import com.example.practicespringsecurity.domain.user.domain.User;
+import com.example.practicespringsecurity.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -14,5 +13,4 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
   public boolean existsByAccountId(String accountId);
 
-  public User save();
 }

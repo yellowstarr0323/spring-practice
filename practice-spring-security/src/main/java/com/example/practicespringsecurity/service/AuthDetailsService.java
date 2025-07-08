@@ -1,8 +1,10 @@
-package com.example.practicespringsecurity.security.principle;
+package com.example.practicespringsecurity.service;
 
 
 
-import com.example.practicespringsecurity.domain.user.domain.repository.UserRepository;
+import com.example.practicespringsecurity.domain.AuthDetails;
+import com.example.practicespringsecurity.repository.UserRepository;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -11,12 +13,14 @@ import com.example.practicespringsecurity.security.exception.UserNotFoundExcepti
 
 @RequiredArgsConstructor
 @Service
+@Transactional
 public class AuthDetailsService implements UserDetailsService {
   private final UserRepository userRepository;
 
-  @Override
   public UserDetails loadUserByUsername(String accountId) {
     return new AuthDetails(userRepository.findByAccountId(accountId)
-        .orElseThrow(() -> UserNotFoundException.EXCEPTION));
+        .orElseThrow(() -> {
+          return UserNotFoundException.EXCEPTION;
+        }));
   }
 }

@@ -1,12 +1,14 @@
-package com.example.practicespringsecurity.security.principle;
+package com.example.practicespringsecurity.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;
 
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import com.example.practicespringsecurity.domain.user.domain.User;
+
 import java.util.Collection;
+import java.util.List;
 
 @Getter
 @AllArgsConstructor
@@ -15,7 +17,7 @@ public class AuthDetails implements UserDetails {
 
   @Override
   public Collection<? extends GrantedAuthority> getAuthorities() {
-    return null;
+    return List.of(new SimpleGrantedAuthority(""+user.getRole()));
   }
 
   @Override
@@ -23,9 +25,11 @@ public class AuthDetails implements UserDetails {
     return user.getAccountId();
   }
 
+
+
   @Override
   public String getPassword() {
-    return null;
+    return user.getPassword();
   }
 
   @Override

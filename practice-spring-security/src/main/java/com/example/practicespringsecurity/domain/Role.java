@@ -1,6 +1,7 @@
-package com.example.practicespringsecurity.domain.user.domain;
+package com.example.practicespringsecurity.domain;
 
 import lombok.Getter;
+
 
 @Getter
 public enum Role {

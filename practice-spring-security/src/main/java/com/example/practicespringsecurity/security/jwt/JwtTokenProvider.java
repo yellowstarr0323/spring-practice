@@ -1,10 +1,9 @@
 package com.example.practicespringsecurity.security.jwt;
 
 
-import com.example.practicespringsecurity.config.JwtProperties;
-import com.example.practicespringsecurity.security.jwt.exception.ExpiredJwtException;
-import com.example.practicespringsecurity.security.jwt.exception.InvalidJwtException;
-import com.example.practicespringsecurity.security.principle.AuthDetailsService;
+import com.example.practicespringsecurity.security.exception.ExpiredJwtException;
+import com.example.practicespringsecurity.security.exception.InvalidJwtException;
+import com.example.practicespringsecurity.service.AuthDetailsService;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -22,7 +21,7 @@ import java.util.Date;
 @Slf4j
 @Component
 @RequiredArgsConstructor
-public class JwtTokenProvider {
+public class JwtTokenProvider{
 
   private final JwtProperties jwtProperties;
   private final AuthDetailsService authDetailsService;
@@ -33,6 +32,7 @@ public class JwtTokenProvider {
     return createToken(accountId, ACCESS_KEY, jwtProperties.getAccessExp() * 10L);
   }
 
+  //JWT 토큰을 직접적으로 생성하는 코드
   private String createToken(String accountId, String type, Long time) {
     Date now = new Date();
     return Jwts.builder()
@@ -48,17 +48,17 @@ public class JwtTokenProvider {
     String bearer = request.getHeader("Authorization");
     return parseToken(bearer);
   }
-
+  //이거 잘 이해 안됨
   public String parseToken(String bearerToken) {
     if (bearerToken != null && bearerToken.startsWith("Bearer ")) {
       return bearerToken.replace("Bearer ", "");
     }
     return null;
   }
-
+  //이쪽 파트 이해 필요
   public UsernamePasswordAuthenticationToken authorization(String token) {
     UserDetails userDetails = authDetailsService.loadUserByUsername(getTokenSubject(token));
-    return new UsernamePasswordAuthenticationToken(userDetails, "", userDetails.getAuthorities());
+    return new UsernamePasswordAuthenticationToken(userDetails, "", userDetails.getAuthorities());//2번째 파라미터 뭐임?
   }
 
   private String getTokenSubject(String subject) {

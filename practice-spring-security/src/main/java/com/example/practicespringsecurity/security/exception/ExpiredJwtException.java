@@ -1,7 +1,4 @@
-package com.example.practicespringsecurity.security.jwt.exception;
-
-import com.example.practicespringsecurity.security.exception.CustomException;
-import com.example.practicespringsecurity.security.exception.ErrorCode;
+package com.example.practicespringsecurity.security.exception;
 
 
 public class ExpiredJwtException extends CustomException {

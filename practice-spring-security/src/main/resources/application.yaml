@@ -14,6 +14,6 @@ spring:
     password: lhs0324*
     url: jdbc:mysql://localhost:3306/newschema
 jwt:
-  secret-key: secret-key
-  access-exp: 900000         # 15분 (밀리초 기준)
-  refresh-exp: 604800000     # 7일 (밀리초 기준)
+  secret-key: bW9yZGF0aGVfMzJfYnl0ZXNfbG9uZ19zZWNyZXRfa2V5
+  access-exp: 900000          # 15분 (밀리초 단위: 15 * 60 * 1000 = 900,000)
+  refresh-exp: 604800000      # 7일 (밀리초 단위: 7 * 24 * 60 * 60 * 1000 = 604,800,000)
