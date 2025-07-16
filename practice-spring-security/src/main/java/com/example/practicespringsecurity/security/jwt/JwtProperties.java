@@ -10,7 +10,7 @@ public class JwtProperties {
 
   @Value("${jwt.secret-key}")
   private String secretKey;
-
+x
   @Value("${jwt.access-exp}")
   private Long accessExp;
 
