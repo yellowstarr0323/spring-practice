@@ -1,5 +1,6 @@
-package com.example.practicespringsecurity.domain;
+package com.example.practicespringsecurity.user;
 
+import com.example.practicespringsecurity.auth.Role;
 import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;

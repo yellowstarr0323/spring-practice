@@ -3,7 +3,7 @@ package com.example.practicespringsecurity.security.jwt;
 
 import com.example.practicespringsecurity.security.exception.ExpiredJwtException;
 import com.example.practicespringsecurity.security.exception.InvalidJwtException;
-import com.example.practicespringsecurity.service.AuthDetailsService;
+import com.example.practicespringsecurity.authDetails.AuthDetailsService;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

@@ -1,6 +1,5 @@
-package com.example.practicespringsecurity.repository;
+package com.example.practicespringsecurity.user;
 
-import com.example.practicespringsecurity.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

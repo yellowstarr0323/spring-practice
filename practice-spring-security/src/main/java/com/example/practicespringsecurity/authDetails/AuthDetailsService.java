@@ -1,9 +1,8 @@
-package com.example.practicespringsecurity.service;
+package com.example.practicespringsecurity.authDetails;
 
 
 
-import com.example.practicespringsecurity.domain.AuthDetails;
-import com.example.practicespringsecurity.repository.UserRepository;
+import com.example.practicespringsecurity.user.UserRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;

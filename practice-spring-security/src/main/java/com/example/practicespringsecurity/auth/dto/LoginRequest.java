@@ -1,4 +1,4 @@
-package com.example.practicespringsecurity.dto;
+package com.example.practicespringsecurity.auth.dto;
 
 import lombok.Getter;
 

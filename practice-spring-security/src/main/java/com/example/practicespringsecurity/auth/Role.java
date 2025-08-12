@@ -1,4 +1,4 @@
-package com.example.practicespringsecurity.domain;
+package com.example.practicespringsecurity.auth;
 
 import lombok.Getter;
 

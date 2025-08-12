@@ -1,5 +1,6 @@
-package com.example.practicespringsecurity.domain;
+package com.example.practicespringsecurity.authDetails;
 
+import com.example.practicespringsecurity.user.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;

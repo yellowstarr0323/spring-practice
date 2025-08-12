@@ -1,6 +1,6 @@
-package com.example.practicespringsecurity.dto;
+package com.example.practicespringsecurity.auth.dto;
 
-import com.example.practicespringsecurity.domain.Role;
+import com.example.practicespringsecurity.auth.Role;
 import lombok.Getter;
 
 @Getter

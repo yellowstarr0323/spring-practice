@@ -1,4 +1,4 @@
-package com.example.practicespringsecurity.security.config;
+package com.example.practicespringsecurity.config;
 
 import com.example.practicespringsecurity.security.jwt.JwtTokenFilter;
 import com.example.practicespringsecurity.security.jwt.JwtTokenProvider;

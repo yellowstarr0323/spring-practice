@@ -1,11 +1,10 @@
-package com.example.practicespringsecurity.service;
+package com.example.practicespringsecurity.auth;
 
-import com.example.practicespringsecurity.domain.Role;
-import com.example.practicespringsecurity.domain.User;
-import com.example.practicespringsecurity.dto.LoginRequest;
-import com.example.practicespringsecurity.dto.SignUpRequest;
-import com.example.practicespringsecurity.dto.TokenResponse;
-import com.example.practicespringsecurity.repository.UserRepository;
+import com.example.practicespringsecurity.user.User;
+import com.example.practicespringsecurity.auth.dto.LoginRequest;
+import com.example.practicespringsecurity.auth.dto.SignUpRequest;
+import com.example.practicespringsecurity.auth.dto.TokenResponse;
+import com.example.practicespringsecurity.user.UserRepository;
 import com.example.practicespringsecurity.security.exception.PasswordMismatchException;
 import com.example.practicespringsecurity.security.exception.UserNotFoundException;
 import com.example.practicespringsecurity.security.jwt.JwtTokenProvider;

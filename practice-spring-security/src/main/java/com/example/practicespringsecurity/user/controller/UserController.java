@@ -1,8 +1,8 @@
-package com.example.practicespringsecurity.controller;
+package com.example.practicespringsecurity.user.controller;
 
-import com.example.practicespringsecurity.service.UserService;
+import com.example.practicespringsecurity.user.UserService;
 
-import com.example.practicespringsecurity.domain.User;
+import com.example.practicespringsecurity.user.User;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.web.bind.annotation.GetMapping;
